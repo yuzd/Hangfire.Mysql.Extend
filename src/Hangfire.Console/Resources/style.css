@@ -1,0 +1,160 @@
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.console-area {
+    padding: 0;
+    margin: 5px -10px 0 -10px;
+}
+
+.console {
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: #0d3163;
+    color: #ffffff;
+
+    overflow-x: hidden;
+    overflow-y: hidden; /* may be changed to 'auto' for fixed-height console */
+}
+
+.console .line-buffer {
+    background-color: #0d3163;
+    color: #ffffff;
+
+    margin: 0;
+    border: none;
+    padding: 10px;
+}
+
+.console .line-buffer:empty {
+    display: none;
+}
+
+.console .line {
+    margin: 0;
+    line-height: 1.4em;
+    min-height: 1.4em;
+    font-size: 0.85em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    vertical-align: top;
+}
+
+.console .line > span[data-moment-title] {
+    display: none; /* timestamp is hidden in compact view */
+    color: #00aad7;
+}
+
+.console .line.pb {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.console .line.pb > .pv {
+    background-color: currentColor;
+    display: inline-block;
+    min-width: 1.6em;
+    text-align: center;
+    transition: width .6s ease;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.console .line.pb > .pv:before {
+    content: attr(data-value) '%';
+    color: #0d3163;
+}
+
+@media (min-width: 768px) {
+
+    .console .line {
+        margin-left: 180px; /* same as dd */
+    }
+
+    .console .line > span[data-moment-title] {
+        display: inline-block;
+        width: 160px; /* same as dt */
+        margin-left: -180px;
+        margin-right: 20px;
+        overflow: hidden;
+        text-align: right;
+        text-overflow: ellipsis;
+        vertical-align: top;
+        white-space: pre;
+    }
+
+    .console .line.pb > span[data-moment-title] {
+        padding-right: 1px;
+    }
+
+}
+
+/* Optional CSS3 bells and whistles */
+
+.console.active {
+    -webkit-transition: height .3s ease-out;
+    -moz-transition: height .3s ease-out;
+    -o-transition: height .3s ease-out;
+    transition: height .3s ease-out;
+}
+
+.console.active .line.new {
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out forwards;
+
+    /* IE9 knows opacity (but not animation), and hides the line. 
+       As a workaround, override this with IE-specific attribute. */
+    filter: alpha(opacity=100);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* !!! The following two blocks are important for smooth text animation !!! */
+
+.console.active .line-buffer {
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.console.active .line.new, 
+.console.active .line.new > span[data-moment-title] {
+    background-color: inherit;
+}
+
+@media only screen {
+
+    .console.waiting:after {
+        content: '...';
+        display: block;
+        position: absolute;
+        font-size: 0.85em;
+        line-height: 1.4em;
+        text-overflow: clip;
+        overflow: hidden;
+
+        width: 0;
+        animation: loadingDots 1s infinite steps(4);
+        transform: translate(-1px, -1.4em);
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .console.waiting:after {
+        margin-left: 190px;
+    }
+
+}
+
+@keyframes loadingDots {
+    to { width: 27px; }
+}

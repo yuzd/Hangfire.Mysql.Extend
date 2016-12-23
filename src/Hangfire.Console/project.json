@@ -1,0 +1,36 @@
+﻿{
+  "version": "1.1.6-*",
+
+  "title": "Hangfire.Console",
+  "description": "Job console for Hangfire",
+  "authors": [ "Alexey Skalozub" ],
+
+  "packOptions": {
+    "summary": "Job console for Hangfire",
+    "tags": [ "hangfire", "console", "logging" ],
+    "owners": [ "Alexey Skalozub" ],
+    "iconUrl": "https://raw.githubusercontent.com/pieceofsummer/Hangfire.Console/master/hangfire.console.png",
+    "licenseUrl": "https://raw.githubusercontent.com/pieceofsummer/Hangfire.Console/master/LICENSE.md",
+    "releaseNotes": "- Key format changed to support single-keyspace storages, like Hangfire.Redis",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/pieceofsummer/Hangfire.Console"
+    }
+  },
+
+  "buildOptions": {
+    "warningsAsErrors": true,
+    "xmlDoc": true,
+
+    "embed": [ "Resources/*" ]
+  },
+
+  "dependencies": {
+    "Hangfire.Core": "1.6.0"
+  },
+
+  "frameworks": {
+    "netstandard1.3": {},
+    "net45": {}
+  }
+}

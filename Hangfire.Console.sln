@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{436BABB0-DBF7-4301-BC7F-CBB9D09FAD36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{657DF223-42EC-4765-990B-334C62F602EA}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		dashboard.png = dashboard.png
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CBD2EEC6-826C-4477-B8F7-EADE2D944B74}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Hangfire.Console.Tests", "tests\Hangfire.Console.Tests\Hangfire.Console.Tests.xproj", "{D5068E09-A43C-4B05-8068-C50E9497EB25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Console", "Hangfire.Console\Hangfire.Console.csproj", "{AA23B0A2-DF96-461B-AD2D-20D7C9209BE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.MySql", "Hangfire.MySql\Hangfire.MySql.csproj", "{A4D8007C-A2E5-4BD9-A707-87BA00EB6B7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5068E09-A43C-4B05-8068-C50E9497EB25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5068E09-A43C-4B05-8068-C50E9497EB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5068E09-A43C-4B05-8068-C50E9497EB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5068E09-A43C-4B05-8068-C50E9497EB25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA23B0A2-DF96-461B-AD2D-20D7C9209BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA23B0A2-DF96-461B-AD2D-20D7C9209BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA23B0A2-DF96-461B-AD2D-20D7C9209BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA23B0A2-DF96-461B-AD2D-20D7C9209BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D8007C-A2E5-4BD9-A707-87BA00EB6B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D8007C-A2E5-4BD9-A707-87BA00EB6B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D8007C-A2E5-4BD9-A707-87BA00EB6B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D8007C-A2E5-4BD9-A707-87BA00EB6B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5068E09-A43C-4B05-8068-C50E9497EB25} = {CBD2EEC6-826C-4477-B8F7-EADE2D944B74}
+		{AA23B0A2-DF96-461B-AD2D-20D7C9209BE2} = {436BABB0-DBF7-4301-BC7F-CBB9D09FAD36}
+		{A4D8007C-A2E5-4BD9-A707-87BA00EB6B7A} = {436BABB0-DBF7-4301-BC7F-CBB9D09FAD36}
+	EndGlobalSection
+EndGlobal
